@@ -121,7 +121,7 @@ export default function Chat() {
     setMessages((prev) => [...prev, data]);
   }, []);
 
-  const sendMessage = useWebSocket("ws://localhost:8080", onMessage);
+  const sendMessage = useWebSocket("process.env.BACKEND_URL", onMessage);
 
   const handleSendMessage = useCallback(() => {
     if (message) {
